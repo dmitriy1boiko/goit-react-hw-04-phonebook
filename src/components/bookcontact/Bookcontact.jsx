@@ -5,10 +5,6 @@ import PropTypes from 'prop-types';
 export default function Bookcontact({ addContact }) {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
-  // const[form, setForm]=useState({name:'',number:'',});
-  // const handleChange = e => {
-  //const { name, value } = e.target;
-  //setForm((prevForm)=>{return {...prevForm, [name]:value,}})
 
   const handleChange = e => {
     const { name, value } = e.target;
@@ -60,63 +56,5 @@ export default function Bookcontact({ addContact }) {
   );
 }
 
-Bookcontact.propTypes ={addContact:PropTypes.func.isRequired,};
+Bookcontact.propTypes = { addContact: PropTypes.func.isRequired };
 
-
-//const authFormOptions = [
-//   {
-//     type: "text",
-//     label: "Emeil",
-//     placeholder: "Enter email",
-//     name: "email",
-//   },
-//   {
-//     type: "text",
-//     label: "Password",
-//     placeholder: "Enter password",
-//     name: "password",
-//   },
-//   {
-//     type: "text",
-//     label: "ConfirmPassword",
-//     placeholder: "Enter password",
-//     name: "confirmPassword",
-//   },
-// ];
-
-// const Form = ({ formOptions, initialValues }) => {
-//   const [form, setForm] = useState(initialValues);
-//   // useState()
-//   // useState()
-//   // useState()
-
-//   const handleChange = (e) => {
-//     const { name, value } = e.target;
-//     setForm((prevForm) => ({ ...prevForm, [name]: value }));
-//   };
-
-//   return (
-//     <form>
-//       {formOptions.map((el) => (
-//         <>
-//           <p>{el.label}</p>
-//           <input
-//             type={el.type}
-//             name={el.name}
-//             value={form[el.name]}
-//             onChange={handleChange}
-//           />
-//         </>
-//       ))}
-//     </form>
-//   );
-// };
-
-// <Form
-//   formOptions={authFormOptions}
-//   initialValues={{
-//     email: "",
-//     password: "",
-//     confirmPassword: "",
-//   }}
-// />;

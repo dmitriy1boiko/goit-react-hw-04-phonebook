@@ -1,6 +1,6 @@
 import Bookcontact from './bookcontact/Bookcontact';
 import Section from './section/Section';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { Contacts } from './contacts/Contacts';
 import { FilterContacts } from './filter-contacts/FilterContacts';
 import { Container } from './App.styled';
@@ -10,18 +10,10 @@ export const App = () => {
     () => JSON.parse(localStorage.getItem('contacts')) ?? []
   );
   const [filter, setFilter] = useState('');
-  const firstRenderRef = useRef(true);
+
   useEffect(() => {
-    if (firstRenderRef.current) {
-      firstRenderRef.current = false;
-      return;
-    }
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }, [contacts]);
-
-  // useEffect(()=>{
-  //   setContakts(JSON.parse(localStorage.getItem('contacts')))
-  // },[]);
 
   const findContact = contact => {
     return contacts.find(
@@ -40,11 +32,7 @@ export const App = () => {
   const handleChengeInput = filter => {
     setFilter(filter);
   };
-  // const books = ['fdf', 'flgf'];
-  // const a = () => {
-  //   return books.filter(book => book.includes(''));
-  // };
-  // console.log(a());
+
   const applyFilters = () => {
     return contacts.filter(
       contact =>
